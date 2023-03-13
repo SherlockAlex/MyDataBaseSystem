@@ -39,8 +39,8 @@ namespace MyDataBaseSystem
                 return;
             }
             MessageBox.Show("连接成功");
-
             
+            MessageBox.Show(DataBaseSystem.Result()[0]);
 
         }
     }

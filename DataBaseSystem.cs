@@ -16,6 +16,13 @@ namespace MyDataBaseSystem
 
         static MySqlConnection connection=null;
 
+        static List<string> result = new List<string>();
+
+        public static List<string> Result()
+        {
+            return result;
+        }
+
         public static int ConnectionToDataBase(
             string database,
             string server,
@@ -42,7 +49,7 @@ namespace MyDataBaseSystem
             return 0;
         }
 
-        static List<string> result= new List<string>();
+        
 
         public static MySqlConnection CreateConnection(
             string database,
@@ -87,7 +94,6 @@ namespace MyDataBaseSystem
             while (dataReader.Read())
             {
                 result.Add(dataReader.GetString(0));
-
             }
 
         }
