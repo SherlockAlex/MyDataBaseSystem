@@ -18,6 +18,8 @@ namespace MyDataBaseSystem
         public LoginForm()
         {
             InitializeComponent();
+            databaseSelect.Items.Add("test");
+            databaseSelect.Items.Add("test1");
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -25,7 +27,8 @@ namespace MyDataBaseSystem
             //登录到数据库系统，并且显示接下来的操作页面
             //使用单例模式，每次登录都创建一个对象
 
-            string database = databaseName.Text;            //数据库名
+
+            string database = databaseSelect.Text;          //数据库名
             string server = "localhost";                    //服务器
             int port = 3306;                                //端口号
             string passwd = password.Text;                  //密码

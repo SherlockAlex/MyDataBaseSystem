@@ -37,8 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.user = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.databaseName = new System.Windows.Forms.TextBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.databaseSelect = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // mySqlCommand1
@@ -108,29 +107,21 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "数据库";
             // 
-            // databaseName
+            // databaseSelect
             // 
-            this.databaseName.Location = new System.Drawing.Point(305, 59);
-            this.databaseName.Name = "databaseName";
-            this.databaseName.Size = new System.Drawing.Size(198, 27);
-            this.databaseName.TabIndex = 7;
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(604, 59);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(150, 114);
-            this.checkedListBox1.TabIndex = 9;
+            this.databaseSelect.FormattingEnabled = true;
+            this.databaseSelect.Location = new System.Drawing.Point(305, 59);
+            this.databaseSelect.Name = "databaseSelect";
+            this.databaseSelect.Size = new System.Drawing.Size(198, 28);
+            this.databaseSelect.TabIndex = 9;
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.databaseSelect);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.databaseName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.user);
             this.Controls.Add(this.label2);
@@ -154,7 +145,6 @@
         private Label label1;
         private TextBox user;
         private Label label3;
-        private TextBox databaseName;
-        private CheckedListBox checkedListBox1;
+        private ComboBox databaseSelect;
     }
 }
