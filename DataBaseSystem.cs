@@ -16,9 +16,9 @@ namespace MyDataBaseSystem
 
         static MySqlConnection connection=null;
 
-        static List<string> result = new List<string>();
+        static List<List<string>> result = new List<List<string>>();
 
-        public static List<string> Result()
+        public static List<List<string>> Result()
         {
             return result;
         }
@@ -99,24 +99,31 @@ namespace MyDataBaseSystem
             result.Clear();
 
             int columnCount = dataReader.FieldCount;            //返回的属性个数
-            string columnsName = "";
-            
+            List<string> columnsName = new List<string>();
+
             //先添加列名
-            for (int i = 0; i < columnCount; i++)
+            //for (int i = 0; i < columnCount; i++)
+            //{
+            //    columnsName += (dataReader.GetName(i) + " ");
+            //}
+
+            for (int i=0;i<columnCount;i++)
             {
-                columnsName += (dataReader.GetName(i) + " ");
+                columnsName.Add(dataReader.GetName(i));
             }
             result.Add(columnsName);
 
             //添加记录，时间复杂度为 O(mn) m为行数，n为列数
             while (dataReader.Read())
             {
-                string values = "";
+                //string values = "";
+                List<string> rows= new List<string>();
                 for (int i = 0; i < columnCount; i++)
                 {
-                    values += (dataReader.GetString(i) + " ");
+                    rows.Add(dataReader.GetString(i));
+                    //values += (dataReader.GetString(i) + " ");
                 }
-                result.Add(values);
+                result.Add(rows);
 
             }
 

@@ -27,3 +27,4 @@ D:\Work\Learn\MyDataBaseSystem\MyDataBaseSystem\obj\Debug\net6.0-windows\refint\
 D:\Work\Learn\MyDataBaseSystem\MyDataBaseSystem\obj\Debug\net6.0-windows\MyDataBaseSystem.pdb
 D:\Work\Learn\MyDataBaseSystem\MyDataBaseSystem\obj\Debug\net6.0-windows\MyDataBaseSystem.genruntimeconfig.cache
 D:\Work\Learn\MyDataBaseSystem\MyDataBaseSystem\obj\Debug\net6.0-windows\ref\MyDataBaseSystem.dll
+D:\Work\Learn\MyDataBaseSystem\MyDataBaseSystem\obj\Debug\net6.0-windows\MyDataBaseSystem.DataViewForm.resources

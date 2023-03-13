@@ -9,14 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Common;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace MyDataBaseSystem
 {
     public partial class LoginForm : Form
     {
+        DataViewForm dataViewForm;
         public LoginForm()
         {
+            dataViewForm= new DataViewForm();
             InitializeComponent();
             databaseSelect.Items.Add("test");
             databaseSelect.Items.Add("test1");
@@ -44,15 +47,30 @@ namespace MyDataBaseSystem
             MessageBox.Show("连接成功");
 
             //下面代码是测试用的
-            DataBaseSystem.Select("*","student");
-            string reader="";
 
-            foreach (string result in DataBaseSystem.Result())
+
+            DataBaseSystem.Select("*","student");
+
+            dataViewForm.Show();
+
+            DataGridView gridView = dataViewForm.GetDataGridView;
+            for (int j = 0; j < DataBaseSystem.Result()[0].Count; j++)
             {
-                reader += result + "\n";
+                DataGridViewTextBoxColumn dataColumn = new DataGridViewTextBoxColumn();
+                gridView.Columns.Add(dataColumn);
+                gridView.Columns[j].HeaderText = DataBaseSystem.Result()[0][j];
+                gridView.Columns[j].ReadOnly= true;                             //只读
             }
 
-            MessageBox.Show(reader);
+            for (int i=1;i< DataBaseSystem.Result().Count;i++)
+            {
+                //添加一行
+                int index = gridView.Rows.Add();
+                for (int j=0;j< DataBaseSystem.Result()[0].Count;j++)
+                {
+                    gridView.Rows[index].Cells[j].Value = DataBaseSystem.Result()[i][j];
+                }
+            }
 
         }
     }
