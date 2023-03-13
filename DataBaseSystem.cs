@@ -81,6 +81,11 @@ namespace MyDataBaseSystem
         /*从database，table查找colum中数据，成功返回0，否则非0*/
         public static void Select(string column,string table)
         {
+            //当没有连接到数据库时
+            if (connection.Database=="")
+            {
+                return;
+            }
             //创建查询,单链表但输入查询
             MySqlCommand command = new MySqlCommand(
                 //use database;select column from table;
@@ -92,9 +97,26 @@ namespace MyDataBaseSystem
             MySqlDataReader dataReader= command.ExecuteReader();
 
             result.Clear();
+
+            int columnCount = dataReader.FieldCount;            //返回的属性个数
+            string columnsName = "";
+            for (int i = 0; i < columnCount; i++)
+            {
+                columnsName += (dataReader.GetName(i) + " ");
+            }
+            result.Add(columnsName);
+
+            //result.Add(dataReader.GetName(0) + "  " + dataReader.GetName(1));
             while (dataReader.Read())
             {
-                result.Add(dataReader.GetString(0));
+                string values = "";
+                for (int i = 0; i < columnCount; i++)
+                {
+                    values += (dataReader.GetString(i) + " ");
+                }
+                result.Add(values);
+
+                //result.Add(dataReader.GetString(0)+"  "+dataReader.GetString(1));
             }
 
         }

@@ -45,7 +45,14 @@ namespace MyDataBaseSystem
 
             //下面代码是测试用的
             DataBaseSystem.Select("*","student");
-            MessageBox.Show(DataBaseSystem.Result()[0] + DataBaseSystem.Result()[1] + DataBaseSystem.Result()[2]);
+            string reader="";
+
+            foreach (string result in DataBaseSystem.Result())
+            {
+                reader += result + "\n";
+            }
+
+            MessageBox.Show(reader);
 
         }
     }
