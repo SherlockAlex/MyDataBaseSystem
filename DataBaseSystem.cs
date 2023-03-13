@@ -100,13 +100,15 @@ namespace MyDataBaseSystem
 
             int columnCount = dataReader.FieldCount;            //返回的属性个数
             string columnsName = "";
+            
+            //先添加列名
             for (int i = 0; i < columnCount; i++)
             {
                 columnsName += (dataReader.GetName(i) + " ");
             }
             result.Add(columnsName);
 
-            //result.Add(dataReader.GetName(0) + "  " + dataReader.GetName(1));
+            //添加记录，时间复杂度为 O(mn) m为行数，n为列数
             while (dataReader.Read())
             {
                 string values = "";
@@ -116,7 +118,6 @@ namespace MyDataBaseSystem
                 }
                 result.Add(values);
 
-                //result.Add(dataReader.GetString(0)+"  "+dataReader.GetString(1));
             }
 
         }
