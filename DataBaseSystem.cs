@@ -81,10 +81,11 @@ namespace MyDataBaseSystem
         /*从database，table查找colum中数据，成功返回0，否则非0*/
         public static void Select(string column,string table)
         {
-            //创建查询
+            //创建查询,单链表但输入查询
             MySqlCommand command = new MySqlCommand(
                 //use database;select column from table;
-                ("select "+column+"from "+table+";")
+                ("select "+column+" from "+table+";"),
+                connection
                 );
 
             //将返回的结果存到数组列表中
