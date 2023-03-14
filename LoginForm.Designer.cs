@@ -56,9 +56,9 @@
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(305, 289);
+            this.loginButton.Location = new System.Drawing.Point(86, 169);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(198, 69);
+            this.loginButton.Size = new System.Drawing.Size(285, 69);
             this.loginButton.TabIndex = 0;
             this.loginButton.Text = "登录系统";
             this.loginButton.UseVisualStyleBackColor = true;
@@ -66,7 +66,7 @@
             // 
             // password
             // 
-            this.password.Location = new System.Drawing.Point(305, 193);
+            this.password.Location = new System.Drawing.Point(173, 136);
             this.password.Name = "password";
             this.password.PasswordChar = '·';
             this.password.Size = new System.Drawing.Size(198, 27);
@@ -76,7 +76,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(218, 193);
+            this.label2.Location = new System.Drawing.Point(86, 136);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 20);
             this.label2.TabIndex = 4;
@@ -85,7 +85,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(218, 127);
+            this.label1.Location = new System.Drawing.Point(86, 87);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 20);
             this.label1.TabIndex = 6;
@@ -93,7 +93,7 @@
             // 
             // user
             // 
-            this.user.Location = new System.Drawing.Point(305, 127);
+            this.user.Location = new System.Drawing.Point(173, 87);
             this.user.Name = "user";
             this.user.Size = new System.Drawing.Size(198, 27);
             this.user.TabIndex = 5;
@@ -101,7 +101,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(218, 59);
+            this.label3.Location = new System.Drawing.Point(86, 41);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 20);
             this.label3.TabIndex = 8;
@@ -110,7 +110,7 @@
             // databaseSelect
             // 
             this.databaseSelect.FormattingEnabled = true;
-            this.databaseSelect.Location = new System.Drawing.Point(305, 59);
+            this.databaseSelect.Location = new System.Drawing.Point(173, 41);
             this.databaseSelect.Name = "databaseSelect";
             this.databaseSelect.Size = new System.Drawing.Size(198, 28);
             this.databaseSelect.TabIndex = 9;
@@ -119,7 +119,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(464, 284);
             this.Controls.Add(this.databaseSelect);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -128,6 +128,7 @@
             this.Controls.Add(this.password);
             this.Controls.Add(this.loginButton);
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
             this.ResumeLayout(false);
             this.PerformLayout();

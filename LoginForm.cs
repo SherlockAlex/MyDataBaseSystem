@@ -16,10 +16,13 @@ namespace MyDataBaseSystem
 {
     public partial class LoginForm : Form
     {
-        DataViewForm dataViewForm;
+        //DataViewForm dataViewForm;
+        MainMenuForm mainMenuForm;
+
         public LoginForm()
         {
-            dataViewForm= new DataViewForm();
+            //dataViewForm= new DataViewForm();
+            mainMenuForm= new MainMenuForm();
             InitializeComponent();
             databaseSelect.Items.Add("test");
             databaseSelect.Items.Add("test1");
@@ -44,34 +47,17 @@ namespace MyDataBaseSystem
                 MessageBox.Show("连接失败!!!\n请输入正确的用户名或密码");
                 return;
             }
-            MessageBox.Show("连接成功");
+            MessageBox.Show("登录成功");
 
             //下面代码是测试用的
+            //主要时更新表格
+            //隐藏登录页面
 
-
-            DataBaseSystem.Select("*","student");
-
-            dataViewForm.Show();
-
-            DataGridView gridView = dataViewForm.GetDataGridView;
-            for (int j = 0; j < DataBaseSystem.Result()[0].Count; j++)
-            {
-                DataGridViewTextBoxColumn dataColumn = new DataGridViewTextBoxColumn();
-                gridView.Columns.Add(dataColumn);
-                gridView.Columns[j].HeaderText = DataBaseSystem.Result()[0][j];
-                gridView.Columns[j].ReadOnly= true;                             //只读
-            }
-
-            for (int i=1;i< DataBaseSystem.Result().Count;i++)
-            {
-                //添加一行
-                int index = gridView.Rows.Add();
-                for (int j=0;j< DataBaseSystem.Result()[0].Count;j++)
-                {
-                    gridView.Rows[index].Cells[j].Value = DataBaseSystem.Result()[i][j];
-                }
-            }
-
+            //dataViewForm.Show();
+            mainMenuForm.Show();
+            //Program.SetCurrentForm(mainMenuForm);
+            //Close();
+            //将程序控制权交给mainMenuForm
         }
     }
 }

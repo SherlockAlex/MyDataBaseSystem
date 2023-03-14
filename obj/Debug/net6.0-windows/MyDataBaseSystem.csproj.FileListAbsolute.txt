@@ -28,3 +28,4 @@ D:\Work\Learn\MyDataBaseSystem\MyDataBaseSystem\obj\Debug\net6.0-windows\MyDataB
 D:\Work\Learn\MyDataBaseSystem\MyDataBaseSystem\obj\Debug\net6.0-windows\MyDataBaseSystem.genruntimeconfig.cache
 D:\Work\Learn\MyDataBaseSystem\MyDataBaseSystem\obj\Debug\net6.0-windows\ref\MyDataBaseSystem.dll
 D:\Work\Learn\MyDataBaseSystem\MyDataBaseSystem\obj\Debug\net6.0-windows\MyDataBaseSystem.DataViewForm.resources
+D:\Work\Learn\MyDataBaseSystem\MyDataBaseSystem\obj\Debug\net6.0-windows\MyDataBaseSystem.MainMenuForm.resources

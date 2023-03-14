@@ -43,6 +43,7 @@ namespace MyDataBaseSystem
             }
             catch(Exception ex)
             {
+                Console.WriteLine(ex.ToString());
                 return -1;
             }
             
@@ -72,7 +73,7 @@ namespace MyDataBaseSystem
         public static void UseDataBase(string database)
         {
             //使用数据库
-            MySqlCommand command = new MySqlCommand(
+            new MySqlCommand(
             //use database;select column from table;
                 ("use "+database+";")
                 );
@@ -101,12 +102,6 @@ namespace MyDataBaseSystem
             int columnCount = dataReader.FieldCount;            //返回的属性个数
             List<string> columnsName = new List<string>();
 
-            //先添加列名
-            //for (int i = 0; i < columnCount; i++)
-            //{
-            //    columnsName += (dataReader.GetName(i) + " ");
-            //}
-
             for (int i=0;i<columnCount;i++)
             {
                 columnsName.Add(dataReader.GetName(i));
@@ -126,6 +121,7 @@ namespace MyDataBaseSystem
                 result.Add(rows);
 
             }
+            dataReader.Close();//关闭读取器
 
         }
     }
